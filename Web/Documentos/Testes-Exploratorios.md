@@ -38,6 +38,8 @@ Sistema aceita ambos sem validação. Nenhuma mensagem de erro.
 
 *Bugs funcionais:*
 - Quando 5 ou mais funcionários são cadastrados, não há rolagem para verificar os demais funcionários.
+- Botão "Adicionar EPI" não funciona.
+- Botão "Adicionar outra atividade" funciona incorretamente.
 
 *Bugs visuais:*
 - Cargo 1 está com bug visual na listagem (não é exibido).
