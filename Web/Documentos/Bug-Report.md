@@ -309,7 +309,7 @@
 
 **Esperado:** O botão "Adicionar outra atividade" deve executar uma ação para permitir adicionar mais uma atividade ao cadastro do funcionário, sem finalizar/salvar o cadastro.
 
-**Obtido:** O funcionário é cadastrado (com apenas a atividade já selecionada) e a página é redirecionada para a listagem de funcionários — comportamento idêntico ao botão "Salvar".
+**Obtido:** O funcionário é cadastrado (com apenas a atividade já selecionada) e a página é redirecionada para a listagem de funcionários. Comportamento idêntico ao botão "Salvar".
 
 | Severidade | Prioridade | Evidência |
 |---|---|---|
