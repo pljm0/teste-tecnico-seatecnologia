@@ -52,8 +52,8 @@ Realizar testes no sistema web, API e no cruzamento entre eles.
 ### 5.3 Testes de integração (Web + API)
 | Aspecto | Abordagem |
 |---|---|
-| Ferramenta | [ex: Cypress, combinando `cy.request()` com ações de UI] |
-| Foco | consistência de dados entre o que é submetido/exibido na tela e o que é persistido/retornado pela API |
+| Ferramenta | Cypress, combinando `cy.request()` com ações de UI |
+| Foco | Consistência de dados entre o que é submetido/exibido na tela e o que é persistido/retornado pela API |
 | Cobertura por tags | @smoke / @regression / @known-issue |
 
 
@@ -74,7 +74,7 @@ Realizar testes no sistema web, API e no cruzamento entre eles.
 | Data de nascimento sem validação | Alto | Web / API |
 | Falta de uma barra de rolagem ou caixa de pesquisa de funcionários | Alto | Web |
 | Problemas visuais | Médio | Web |
-| Sistema sem autenticação | Alto | API |
+| API sem token de autenticação | Alto | API |
 | Payloads sem validação | Alto | API |
 
 ## 8. Critérios de entrada e saída
