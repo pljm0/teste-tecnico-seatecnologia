@@ -2,6 +2,7 @@
 
 ### O que foi testado
 
+- Cadastro de funcionário 
 - Preenchimento com dados válidos
 - Campos obrigatórios vazios
 - Formatos inválidos (Nome, CPF, RG, caracteres especiais)
@@ -10,19 +11,19 @@
 
 ### Observações
 
-**Nome com formato inválido (ex: Pedro5)**
+**Nome com formato inválido (ex: Pedro5)**  
 Sistema aceita sem validar o formato. Não há mensagem de erro.
 
-**CPF com formato inválido (ex: 123.4567891)**
+**CPF com formato inválido (ex: 123.4567891)**  
 Sistema aceita sem validar o formato. Não há mensagem de erro.
 
-**Campo CPF repetido**
+**Campo CPF repetido**  
 Sistema aceita sem validação. Nenhuma mensagem de erro.
 
-**Campos contendo emoji**
+**Campos contendo emoji**  
 Todos os campos de preenchimento aceitam sem validação. Nenhuma mensagem de erro.
 
-**Data de nascimento aceita menores de 18 anos e datas futuras**
+**Data de nascimento aceita menores de 18 anos e datas futuras**  
 Sistema aceita ambos sem validação. Nenhuma mensagem de erro.
 
 ### Resultado da sessão
@@ -31,6 +32,7 @@ Sistema aceita ambos sem validação. Nenhuma mensagem de erro.
 
 *Bugs de validação:*
 - CPF aceita formato inválido sem validação e repetido.
+- CPF não realiza validação da autenticidade do documento informado.
 - Todos os campos aceitam emoji.
 - Menores de idade e datas de nascimento futuras são aceitas.
 
