@@ -23,6 +23,12 @@
 | [EXP-011](#exp-011) | Seção "A etapa está concluída?" sobrepõe a listagem | Média | Baixa |
 | [EXP-012](#exp-012) | Botão "Adicionar EPI" não executa nenhuma ação | Média | Média |
 | [EXP-013](#exp-013) | Botão "Adicionar outra atividade" salva o cadastro (comportamento do "Salvar") | Alta | Alta |
+| [EXP-014](#exp-014) | API aceita criação de funcionário com CPF em formato inválido. | Alta | Alta |
+| [EXP-015](#exp-015) | API aceita criação de funcionário com CPF já cadastrado. | Alta | Alta |
+| [EXP-016](#exp-016) | API aceita criação de funcionário com campos obrigatórios vazios. | Alta | Alta |
+| [EXP-017](#exp-017) | API aceita criação de funcionário com data de nascimento em formato inválido. | Alta | Alta |
+| [EXP-018](#exp-018) | API não exige autenticação/token para acessar e manipular dados de funcionários. | Alta | Alta |
+| [EXP-019](#exp-019) | API aceita criação de funcionário com payload incorreto fazendo com que a interface web quebre. | Alta | Alta |
 
 ---
 
@@ -314,3 +320,212 @@
 | Severidade | Prioridade | Evidência |
 |---|---|---|
 | Alta | Alta | `SEATECNOLOGIA_EXP-013_FAIL_2026-08-17.mp4` |
+
+## EXP-014
+
+**Título:** API aceita criação de funcionário com CPF em formato inválido.
+
+**Pré-condições:** API disponível e estável.
+
+**Passos:**
+1. Realizar requisição POST para o endpoint /employees com o seguinte payload:
+
+    {
+        "state": {
+            "employee": {
+                "isActive": false,
+                "name": "Teste2",
+                "gender": "masculino",
+                "cpf": "123.4567890",
+                "birthDay": "2000-08-12",
+                "rg": "1234567",
+                "role": "",
+                "usesEpi": true,
+                "caNumber": ""
+            }
+        }
+    }
+
+2. Realizar requisição GET para o endpoint /employees para visualizar os funcionários cadastrados.
+
+**Esperado:** A API não deve permitir o cadastro de funcionários com CPF em formato inválido.
+
+**Obtido:** A API retorna 201 (Created) A API permitindo o cadastro de funcionário utilizando um CPF com formato inválido e não houve nenhuma validação. A requisição GET /employees confirma que o registro foi persistido com o CPF "123.4567890" exatamente como enviado.
+
+| Severidade | Prioridade | Evidência |
+|---|---|---|
+| Alta | Alta | `SEATECNOLOGIA_EXP-014_FAIL_2026-08-17.mp4` |
+
+## EXP-015
+
+**Título:** API aceita criação de funcionário com CPF já cadastrado.
+
+**Pré-condições:** API disponível e estável.
+
+**Passos:**
+1. Realizar requisição POST para o endpoint /employees com o seguinte payload:
+
+    {
+        "state": {
+            "employee": {
+                "isActive": false,
+                "name": "Teste2",
+                "gender": "masculino",
+                "cpf": "12324567890",
+                "birthDay": "2000-08-12",
+                "rg": "1234567",
+                "role": "",
+                "usesEpi": true,
+                "caNumber": ""
+            }
+        }
+    }
+2. Realizar requisição POST para o endpoint /employees com o seguinte payload:
+
+    {
+        "state": {
+            "employee": {
+                "isActive": false,
+                "name": "Teste3",
+                "gender": "masculino",
+                "cpf": "12324567890",
+                "birthDay": "2000-08-12",
+                "rg": "1234567",
+                "role": "",
+                "usesEpi": true,
+                "caNumber": ""
+            }
+        }
+    }
+
+3. Realizar requisição GET para o endpoint /employees para visualizar os funcionários cadastrados.
+
+**Esperado:** A API não deve permitir o cadastro de funcionários com CPF já cadastrado no sistema.
+
+**Obtido:** A API retorna 201 (Created) A API permitindo o cadastro de funcionário utilizando um CPF já cadastrado e não houve nenhuma validação. A requisição GET /employees confirma que o registro foi persistido com o CPF "12324567890" exatamente como enviado em dois funcionários cadastrados.
+
+| Severidade | Prioridade | Evidência |
+|---|---|---|
+| Alta | Alta | `SEATECNOLOGIA_EXP-015_FAIL_2026-08-17.mp4` |
+
+## EXP-016
+
+**Título:** API aceita criação de funcionário com campos obrigatórios vazios.
+
+**Pré-condições:** API disponível e estável.
+
+**Passos:**
+1. Realizar requisição POST para o endpoint /employees com o seguinte payload:
+
+    {
+        "state": {
+            "employee": {
+                "isActive": false,
+                "name": "",
+                "gender": "masculino",
+                "cpf": "",
+                "birthDay": "2000-08-12",
+                "rg": "",
+                "role": "",
+                "usesEpi": true,
+                "caNumber": ""
+            }
+        }
+    }
+
+2. Realizar requisição GET para o endpoint /employees para visualizar o funcionário cadastrado.
+
+**Esperado:** A API não deve permitir o cadastro de funcionários com campos obrigatórios vazios.
+
+**Obtido:** A API retorna 201 (Created) A API permitindo o cadastro de funcionário com campos obrigatórios não preenchidos e não houve nenhuma validação. A requisição GET /employees confirma que o registro foi persistido exatamente como enviado.
+
+| Severidade | Prioridade | Evidência |
+|---|---|---|
+| Alta | Alta | `SEATECNOLOGIA_EXP-016_FAIL_2026-08-17.mp4` |
+
+## EXP-017
+
+**Título:** API aceita criação de funcionário com data de nascimento em formato inválido.
+
+**Pré-condições:** API disponível e estável.
+
+**Passos:**
+1. Realizar requisição POST para o endpoint /employees com o seguinte payload:
+
+    {
+        "state": {
+            "employee": {
+                "isActive": false,
+                "name": "Teste2",
+                "gender": "masculino",
+                "cpf": "12345678912",
+                "birthDay": "2000.08/12",
+                "rg": "213456",
+                "role": "",
+                "usesEpi": true,
+                "caNumber": ""
+            }
+        }
+    }
+
+2. Realizar requisição GET para o endpoint /employees para visualizar o funcionário cadastrado.
+
+**Esperado:** A API não deve permitir o cadastro de funcionários com data de nascimento em formato inválido.
+
+**Obtido:** A API retorna 201 (Created) A API permitindo o cadastro de funcionário com a data de nascimento em formato inválido e não houve nenhuma validação. A requisição GET /employees confirma que o registro foi persistido exatamente como enviado.
+
+| Severidade | Prioridade | Evidência |
+|---|---|---|
+| Alta | Alta | `SEATECNOLOGIA_EXP-017_FAIL_2026-08-17.mp4` |
+
+## EXP-018
+
+**Título:** API não exige autenticação/token para acessar e manipular dados de funcionários.
+
+**Pré-condições:** API disponível e estável.
+
+**Passos:**
+1. Realizar requisição GET para o endpoint /employees, sem incluir nenhum header de autenticação (Authorization/Bearer Token)
+
+2. Observar a resposta.
+
+**Esperado:** A API deve retornar erro 401 (Unauthorized) ou 403 (Forbidden), rejeitando o acesso sem autenticação.
+
+**Obtido:** A API retorna 200 (OK) com os dados completos de todos os funcionários cadastrados, incluindo CPF, sem exigir nenhum token ou credencial. O mesmo para as requisições POST, PUT e DELETE.
+
+| Severidade | Prioridade | Evidência |
+|---|---|---|
+| Alta | Alta | `SEATECNOLOGIA_EXP-018_FAIL_2026-08-17.mp4` |
+
+## EXP-019
+
+**Título:** API aceita criação de funcionário com payload incorreto fazendo com que a interface web quebre.
+
+**Pré-condições:** API disponível e estável.
+
+**Passos:**
+1. Realizar requisição POST para o endpoint /employees com o seguinte payload:
+
+    {
+            "employee": {
+                "isActive": false,
+                "name": "Teste2",
+                "gender": "masculino",
+                "cpf": "12345678912",
+                "birthDay": "2000.08/12",
+                "rg": "213456",
+                "role": "",
+                "usesEpi": true,
+                "caNumber": ""
+            }
+        }
+
+2. Acessar https://analista-teste.seatecnologia.com.br
+
+**Esperado:** A API deve retornar erro 400 (Bad Request), rejeitando a criação do funcionário com payload incorreto.
+
+**Obtido:** A API retorna 201 (Created) cadastrando o funcionário com o payload em formato incorreto e quebrando a interface web (tela cinza).
+
+| Severidade | Prioridade | Evidência |
+|---|---|---|
+| Alta | Alta | `SEATECNOLOGIA_EXP-019_FAIL_2026-08-17.mp4` |
