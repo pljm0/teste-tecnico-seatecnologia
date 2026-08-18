@@ -1,4 +1,4 @@
-# Cenários de Teste — Integração Web x API — SeaTecnologia
+# Casos de Teste — Integração Web x API — SeaTecnologia
 
 **Sistema:** Cadastro de Funcionários (Web + API)
 **Aplicação Web:** https://analista-teste.seatecnologia.com.br
