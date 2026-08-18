@@ -8,20 +8,20 @@
 
 ## Resumo
 
-| ID | Título |
-|---|---|
-| [CT-001](#ct-001) | Efetuar cadastro de funcionário com dados válidos |
-| [CT-002](#ct-002) | Efetuar cadastro de funcionário ativo com dados válidos |
-| [CT-003](#ct-003) | Efetuar cadastro de funcionário com idade menor de 18 anos |
-| [CT-004](#ct-004) | Efetuar cadastro de funcionário com data de nascimento futura |
-| [CT-005](#ct-005) | Não permitir cadastro de funcionário com CPF duplicado |
-| [CT-006](#ct-006) | Validar preenchimento obrigatório do campo Nome |
-| [CT-007](#ct-007) | Validar preenchimento obrigatório do campo CPF |
-| [CT-008](#ct-008) | Validar preenchimento obrigatório do campo RG |
-| [CT-009](#ct-009) | Validar preenchimento obrigatório do campo Data de nascimento |
-| [CT-010](#ct-010) | Validar preenchimento obrigatório do campo Número do CA |
-| [CT-011](#ct-011) | Validar quantidade mínima de caracteres no campo CPF |
-| [CT-012](#ct-012) | Validar inserção de emojis nos campos de cadastro |
+| ID | Título | Observação |
+|---|---|---|
+| [CT-001](#ct-001) | Efetuar cadastro de funcionário com dados válidos | @Smoke / @Regression |
+| [CT-002](#ct-002) | Efetuar cadastro de funcionário ativo com dados válidos | @Regression |
+| [CT-003](#ct-003) | Efetuar cadastro de funcionário com idade menor de 18 anos | @Known-issue |
+| [CT-004](#ct-004) | Efetuar cadastro de funcionário com data de nascimento futura | @Known-issue |
+| [CT-005](#ct-005) | Não permitir cadastro de funcionário com CPF duplicado | @Known-issue |
+| [CT-006](#ct-006) | Validar preenchimento obrigatório do campo Nome | @Regression |
+| [CT-007](#ct-007) | Validar preenchimento obrigatório do campo CPF | @Regression |
+| [CT-008](#ct-008) | Validar preenchimento obrigatório do campo RG | @Regression |
+| [CT-009](#ct-009) | Validar preenchimento obrigatório do campo Data de nascimento | @Regression |
+| [CT-010](#ct-010) | Validar preenchimento obrigatório do campo Número do CA | @Regression |
+| [CT-011](#ct-011) | Validar quantidade mínima de caracteres no campo CPF | @Regression |
+| [CT-012](#ct-012) | Validar inserção de emojis nos campos de cadastro | @Know-issue |
 
 ---
 

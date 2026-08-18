@@ -10,29 +10,29 @@
 
 | ID | Título | Severidade | Prioridade |
 |---|---|---|---|
-| [EXP-001](#exp-001) | Campo "CPF" aceita formato inválido sem validação | Alta | Alta |
-| [EXP-002](#exp-002) | Campo "CPF" aceita duplicação sem validação | Alta | Alta |
-| [EXP-003](#exp-003) | Campo "CPF" não valida autenticidade do documento | Alta | Alta |
-| [EXP-004](#exp-004) | Campos de preenchimento aceitam emoji sem validação | Média | Baixa |
-| [EXP-005](#exp-005) | Campo "CPF" aceita emoji, não valida tipo de dado | Alta | Alta |
-| [EXP-006](#exp-006) | Sistema aceita cadastro com data de nascimento menor que 18 anos | Alta | Alta |
-| [EXP-007](#exp-007) | Sistema aceita cadastro com data de nascimento futura | Alta | Alta |
-| [EXP-008](#exp-008) | Ausência de rolagem impede visualização de 5+ funcionários | Alta | Alta |
-| [EXP-009](#exp-009) | Cargo "Cargo 1" não é exibido corretamente na listagem | Média | Baixa |
-| [EXP-010](#exp-010) | Atividade "Ativid 1" não é exibida corretamente na listagem | Média | Baixa |
-| [EXP-011](#exp-011) | Seção "A etapa está concluída?" sobrepõe a listagem | Média | Baixa |
-| [EXP-012](#exp-012) | Botão "Adicionar EPI" não executa nenhuma ação | Média | Média |
-| [EXP-013](#exp-013) | Botão "Adicionar outra atividade" salva o cadastro (comportamento do "Salvar") | Alta | Alta |
-| [EXP-014](#exp-014) | API aceita criação de funcionário com CPF em formato inválido. | Alta | Alta |
-| [EXP-015](#exp-015) | API aceita criação de funcionário com CPF já cadastrado. | Alta | Alta |
-| [EXP-016](#exp-016) | API aceita criação de funcionário com campos obrigatórios vazios. | Alta | Alta |
-| [EXP-017](#exp-017) | API aceita criação de funcionário com data de nascimento em formato inválido. | Alta | Alta |
-| [EXP-018](#exp-018) | API não exige autenticação/token para acessar e manipular dados de funcionários. | Alta | Alta |
-| [EXP-019](#exp-019) | API aceita criação de funcionário com payload incorreto fazendo com que a interface web quebre. | Alta | Alta |
+| [BUG-001](#BUG-001) | Campo "CPF" aceita formato inválido sem validação | Alta | Alta |
+| [BUG-002](#BUG-002) | Campo "CPF" aceita duplicação sem validação | Alta | Alta |
+| [BUG-003](#BUG-003) | Campo "CPF" não valida autenticidade do documento | Alta | Alta |
+| [BUG-004](#BUG-004) | Campos de preenchimento aceitam emoji sem validação | Média | Baixa |
+| [BUG-005](#BUG-005) | Campo "CPF" aceita emoji, não valida tipo de dado | Alta | Alta |
+| [BUG-006](#BUG-006) | Sistema aceita cadastro com data de nascimento menor que 18 anos | Alta | Alta |
+| [BUG-007](#BUG-007) | Sistema aceita cadastro com data de nascimento futura | Alta | Alta |
+| [BUG-008](#BUG-008) | Ausência de rolagem impede visualização de 5+ funcionários | Alta | Alta |
+| [BUG-009](#BUG-009) | Cargo "Cargo 1" não é exibido corretamente na listagem | Média | Baixa |
+| [BUG-010](#BUG-010) | Atividade "Ativid 1" não é exibida corretamente na listagem | Média | Baixa |
+| [BUG-011](#BUG-011) | Seção "A etapa está concluída?" sobrepõe a listagem | Média | Baixa |
+| [BUG-012](#BUG-012) | Botão "Adicionar EPI" não executa nenhuma ação | Média | Média |
+| [BUG-013](#BUG-013) | Botão "Adicionar outra atividade" salva o cadastro (comportamento do "Salvar") | Alta | Alta |
+| [BUG-014](#BUG-014) | API aceita criação de funcionário com CPF em formato inválido. | Alta | Alta |
+| [BUG-015](#BUG-015) | API aceita criação de funcionário com CPF já cadastrado. | Alta | Alta |
+| [BUG-016](#BUG-016) | API aceita criação de funcionário com campos obrigatórios vazios. | Alta | Alta |
+| [BUG-017](#BUG-017) | API aceita criação de funcionário com data de nascimento em formato inválido. | Alta | Alta |
+| [BUG-018](#BUG-018) | API não exige autenticação/token para acessar e manipular dados de funcionários. | Alta | Alta |
+| [BUG-019](#BUG-019) | API aceita criação de funcionário com payload incorreto fazendo com que a interface web quebre. | Alta | Alta |
 
 ---
 
-## EXP-001
+## BUG-001
 
 **Título:** Campo "CPF" aceita formato inválido sem validação
 
@@ -50,11 +50,11 @@
 
 | Severidade | Prioridade | Evidência |
 |---|---|---|
-| Alta | Alta | `SEATECNOLOGIA_EXP-001_FAIL_2026-08-17.mp4` |
+| Alta | Alta | `SEATECNOLOGIA_BUG-001_2026-08-17.mp4` |
 
 ---
 
-## EXP-002
+## BUG-002
 
 **Título:** Campo "CPF" aceita duplicação sem validação
 
@@ -75,11 +75,11 @@
 
 | Severidade | Prioridade | Evidência |
 |---|---|---|
-| Alta | Alta | `SEATECNOLOGIA_EXP-002_FAIL_2026-08-17.mp4` |
+| Alta | Alta | `SEATECNOLOGIA_BUG-002_2026-08-17.mp4` |
 
 ---
 
-## EXP-003
+## BUG-003
 
 **Título:** Campo "CPF" não realiza validação da autenticidade do documento informado
 
@@ -97,11 +97,11 @@
 
 | Severidade | Prioridade | Evidência |
 |---|---|---|
-| Alta | Alta | `SEATECNOLOGIA_EXP-003_FAIL_2026-08-17.mp4` |
+| Alta | Alta | `SEATECNOLOGIA_BUG-003_2026-08-17.mp4` |
 
 ---
 
-## EXP-004
+## BUG-004
 
 **Título:** Campos de preenchimento aceitam emoji sem validação
 
@@ -120,11 +120,11 @@
 
 | Severidade | Prioridade | Evidência |
 |---|---|---|
-| Média | Baixa | `SEATECNOLOGIA_EXP-004_FAIL_2026-08-17.mp4` |
+| Média | Baixa | `SEATECNOLOGIA_BUG-004_2026-08-17.mp4` |
 
 ---
 
-## EXP-005
+## BUG-005
 
 **Título:** Campo "CPF" aceita emoji, não valida tipo de dado, apenas quantidade de caracteres
 
@@ -143,11 +143,11 @@
 
 | Severidade | Prioridade | Evidência |
 |---|---|---|
-| Alta | Alta | `SEATECNOLOGIA_EXP-005_FAIL_2026-08-17.mp4` |
+| Alta | Alta | `SEATECNOLOGIA_BUG-005_2026-08-17.mp4` |
 
 ---
 
-## EXP-006
+## BUG-006
 
 **Título:** Sistema aceita cadastro de funcionário com data de nascimento menor do que 18 anos
 
@@ -166,11 +166,11 @@
 
 | Severidade | Prioridade | Evidência |
 |---|---|---|
-| Alta | Alta | `SEATECNOLOGIA_EXP-006_FAIL_2026-08-17.mp4` |
+| Alta | Alta | `SEATECNOLOGIA_BUG-006_2026-08-17.mp4` |
 
 ---
 
-## EXP-007
+## BUG-007
 
 **Título:** Sistema aceita cadastro de funcionário com data de nascimento futura
 
@@ -189,11 +189,11 @@
 
 | Severidade | Prioridade | Evidência |
 |---|---|---|
-| Alta | Alta | `SEATECNOLOGIA_EXP-007_FAIL_2026-08-17.mp4` |
+| Alta | Alta | `SEATECNOLOGIA_BUG-007_2026-08-17.mp4` |
 
 ---
 
-## EXP-008
+## BUG-008
 
 **Título:** Ausência de rolagem na listagem impede visualização de funcionários a partir do 5º cadastrado
 
@@ -209,11 +209,11 @@
 
 | Severidade | Prioridade | Evidência |
 |---|---|---|
-| Alta | Alta | `SEATECNOLOGIA_EXP-008_FAIL_2026-08-17.png` |
+| Alta | Alta | `SEATECNOLOGIA_BUG-008_2026-08-17.png` |
 
 ---
 
-## EXP-009
+## BUG-009
 
 **Título:** Cargo "Cargo 1" não é exibido corretamente na listagem de funcionários
 
@@ -232,11 +232,11 @@
 
 | Severidade | Prioridade | Evidência |
 |---|---|---|
-| Média | Baixa | `SEATECNOLOGIA_EXP-009_FAIL_2026-08-17.png` |
+| Média | Baixa | `SEATECNOLOGIA_BUG-009_2026-08-17.png` |
 
 ---
 
-## EXP-010
+## BUG-010
 
 **Título:** Atividade "Ativid 1" não é exibida corretamente na listagem de funcionários
 
@@ -255,11 +255,11 @@
 
 | Severidade | Prioridade | Evidência |
 |---|---|---|
-| Média | Baixa | `SEATECNOLOGIA_EXP-010_FAIL_2026-08-17.png` |
+| Média | Baixa | `SEATECNOLOGIA_BUG-010_2026-08-17.png` |
 
 ---
 
-## EXP-011
+## BUG-011
 
 **Título:** Seção "A etapa está concluída?" sobrepõe a listagem de funcionários quando 4 ou mais funcionários são cadastrados
 
@@ -275,11 +275,11 @@
 
 | Severidade | Prioridade | Evidência |
 |---|---|---|
-| Média | Baixa | `SEATECNOLOGIA_EXP-011_FAIL_2026-08-17.png` |
+| Média | Baixa | `SEATECNOLOGIA_BUG-011_2026-08-17.png` |
 
 ---
 
-## EXP-012
+## BUG-012
 
 **Título:** Botão "Adicionar EPI" não executa nenhuma ação ao ser clicado
 
@@ -297,11 +297,11 @@
 
 | Severidade | Prioridade | Evidência |
 |---|---|---|
-| Média | Média | `SEATECNOLOGIA_EXP-012_FAIL_2026-08-17.mp4` |
+| Média | Média | `SEATECNOLOGIA_BUG-012_2026-08-17.mp4` |
 
 ---
 
-## EXP-013
+## BUG-013
 
 **Título:** Botão "Adicionar outra atividade" finaliza e salva o cadastro do funcionário, com o mesmo comportamento do botão "Salvar"
 
@@ -319,9 +319,9 @@
 
 | Severidade | Prioridade | Evidência |
 |---|---|---|
-| Alta | Alta | `SEATECNOLOGIA_EXP-013_FAIL_2026-08-17.mp4` |
+| Alta | Alta | `SEATECNOLOGIA_BUG-013_2026-08-17.mp4` |
 
-## EXP-014
+## BUG-014
 
 **Título:** API aceita criação de funcionário com CPF em formato inválido.
 
@@ -354,9 +354,9 @@
 
 | Severidade | Prioridade | Evidência |
 |---|---|---|
-| Alta | Alta | `SEATECNOLOGIA_EXP-014_FAIL_2026-08-17.mp4` |
+| Alta | Alta | `SEATECNOLOGIA_BUG-014_2026-08-17.mp4` |
 
-## EXP-015
+## BUG-015
 
 **Título:** API aceita criação de funcionário com CPF já cadastrado.
 
@@ -406,9 +406,9 @@
 
 | Severidade | Prioridade | Evidência |
 |---|---|---|
-| Alta | Alta | `SEATECNOLOGIA_EXP-015_FAIL_2026-08-17.mp4` |
+| Alta | Alta | `SEATECNOLOGIA_BUG-015_2026-08-17.mp4` |
 
-## EXP-016
+## BUG-016
 
 **Título:** API aceita criação de funcionário com campos obrigatórios vazios.
 
@@ -441,9 +441,9 @@
 
 | Severidade | Prioridade | Evidência |
 |---|---|---|
-| Alta | Alta | `SEATECNOLOGIA_EXP-016_FAIL_2026-08-17.mp4` |
+| Alta | Alta | `SEATECNOLOGIA_BUG-016_2026-08-17.mp4` |
 
-## EXP-017
+## BUG-017
 
 **Título:** API aceita criação de funcionário com data de nascimento em formato inválido.
 
@@ -476,9 +476,9 @@
 
 | Severidade | Prioridade | Evidência |
 |---|---|---|
-| Alta | Alta | `SEATECNOLOGIA_EXP-017_FAIL_2026-08-17.mp4` |
+| Alta | Alta | `SEATECNOLOGIA_BUG-017_2026-08-17.mp4` |
 
-## EXP-018
+## BUG-018
 
 **Título:** API não exige autenticação/token para acessar e manipular dados de funcionários.
 
@@ -495,9 +495,9 @@
 
 | Severidade | Prioridade | Evidência |
 |---|---|---|
-| Alta | Alta | `SEATECNOLOGIA_EXP-018_FAIL_2026-08-17.mp4` |
+| Alta | Alta | `SEATECNOLOGIA_BUG-018_2026-08-17.mp4` |
 
-## EXP-019
+## BUG-019
 
 **Título:** API aceita criação de funcionário com payload incorreto fazendo com que a interface web quebre.
 
@@ -528,4 +528,28 @@
 
 | Severidade | Prioridade | Evidência |
 |---|---|---|
-| Alta | Alta | `SEATECNOLOGIA_EXP-019_FAIL_2026-08-17.mp4` |
+| Alta | Alta | `SEATECNOLOGIA_BUG-019_2026-08-17.mp4` |
+
+## BUG-020
+
+**Título:** Divergência Web × API: atributo usesEpi permanece como true após selecionar "O trabalhador não usa EPI" no cadastro pela interface Web.
+
+**Pré-condições:** API disponível e estável.
+
+**Passos:**
+
+1. Acessar a aplicação Web.
+2. Acessar a tela de cadastro de funcionário.
+3. Preencher os campos obrigatórios com dados válidos.
+4. Selecionar a opção "O trabalhador não usa EPI".
+5. Realizar o cadastro do funcionário.
+6. Consultar o funcionário cadastrado por meio da API.
+7. Verificar o valor retornado no atributo usesEpi.
+
+**Esperado:** A API deve alterar o atributo usesEpi para false após selecionar "O trabalhador não usa EPI" durante o cadastro.
+
+**Obtido:** O atributo usesEpi é mantido como true mesmo após selecionar "O trabalhador não usa EPI" no cadastro. É possível conferir o cruzamento de dados ao enviar uma requisição GET para a API.
+
+| Severidade | Prioridade | Evidência |
+|---|---|---|
+| Média | Média | `SEATECNOLOGIA_BUG-020_2026-08-18.mp4` |
