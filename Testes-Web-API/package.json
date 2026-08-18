@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:regression": "cypress run --expose grepTags=\"@regression --@known-issue\"",
+    "cypress:smoke": "cypress run --expose grepTags=@smoke",
+    "cypress:known-issues": "cypress run --expose grepTags=@known-issue",
+    "cypress:regression:web": "cypress run --expose grepTags=\"@regression --@known-issue\" --spec cypress/e2e/web.cy.js",
+    "cypress:regression:api": "cypress run --expose grepTags=\"@regression --@known-issue\" --spec cypress/e2e/api.cy.js",
+    "cypress:regression:webapi": "cypress run --expose grepTags=\"@regression --@known-issue\" --spec cypress/e2e/webxapi.cy.js",
+    "cypress:all": "cypress run"
+  },
+  "devDependencies": {
+    "@cypress/grep": "^6.0.3",
+    "cypress": "^15.20.1",
+    "cypress-mochawesome-reporter": "^5.0.0"
+  }
+}

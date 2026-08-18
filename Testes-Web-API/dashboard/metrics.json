@@ -1,0 +1,33 @@
+{
+  "generatedAt": "2026-08-18T23:32:03.146Z",
+  "totalTests": 16,
+  "passedPct": 100,
+  "passed": 16,
+  "failed": 0,
+  "skipped": 0,
+  "totalDurationSeconds": 20.07,
+  "avgDurationSeconds": 1.25,
+  "fastest": {
+    "title": "Seatecnologia - API API-CT-004 - Validar exclusão de funcionário",
+    "seconds": 0.11
+  },
+  "slowest": {
+    "title": "Seatecnologia - Cadastro CT-001 - Efetuar cadastro de funcionário com dados válidos",
+    "seconds": 2.48
+  },
+  "categories": [
+    {
+      "name": "api",
+      "seconds": 0.69
+    },
+    {
+      "name": "web",
+      "seconds": 14.7
+    },
+    {
+      "name": "webxapi",
+      "seconds": 4.68
+    }
+  ],
+  "coveragePct": 100
+}

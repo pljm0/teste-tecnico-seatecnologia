@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard de QA · Testes Automatizados</title>
+<script src="chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg:#0b0f19;
+    --panel:#121828;
+    --panel-border:#232a3d;
+    --text:#e8ebf3;
+    --muted:#8891a8;
+    --green:#22c55e;
+    --blue:#4a7dff;
+    --orange:#f2a93b;
+    --red:#ef4d5e;
+    --purple:#8b6bf2;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    padding:28px;
+  }
+  .wrap{max-width:1200px;margin:0 auto;}
+  .eyebrow{
+    color:var(--green);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    margin-bottom:8px;
+  }
+  .header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:24px;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  h1{font-size:28px;margin:0 0 6px;}
+  .subtitle{color:var(--muted);font-size:14px;margin:0;}
+  .status-label{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.08em;text-align:right;margin-bottom:6px;}
+  .status-pill{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(34,197,94,.12);
+    border:1px solid rgba(34,197,94,.35);
+    color:var(--green);
+    padding:6px 14px;
+    border-radius:999px;
+    font-size:13px;
+    font-weight:600;
+  }
+  .status-pill .dot{width:7px;height:7px;border-radius:50%;background:var(--green);}
+  .status-pill.warn{background:rgba(242,169,59,.12);border-color:rgba(242,169,59,.35);color:var(--orange);}
+  .status-pill.warn .dot{background:var(--orange);}
+
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+    margin-bottom:20px;
+  }
+  .card{
+    background:var(--panel);
+    border:1px solid var(--panel-border);
+    border-left:3px solid var(--accent,var(--green));
+    border-radius:10px;
+    padding:18px 18px 16px;
+  }
+  .card-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
+  .card-label{font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;}
+  .card-icon{font-size:14px;}
+  .card-value{font-size:30px;font-weight:700;margin-bottom:10px;}
+  .card-foot{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:8px;}
+  .badge{
+    background:rgba(255,255,255,.06);
+    padding:2px 8px;
+    border-radius:5px;
+    font-size:11px;
+  }
+  .badge.up{color:var(--green);background:rgba(34,197,94,.12);}
+  .badge.stable{color:var(--orange);background:rgba(242,169,59,.14);}
+  .bar-track{width:100%;height:5px;border-radius:3px;background:rgba(255,255,255,.08);margin-top:4px;overflow:hidden;}
+  .bar-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--blue),#7ea1ff);}
+  .coverage-breakdown{margin-top:14px;display:flex;flex-direction:column;gap:8px;}
+  .coverage-row{display:grid;grid-template-columns:70px 1fr 40px;align-items:center;gap:8px;}
+  .coverage-area{font-size:11px;color:var(--muted);text-transform:capitalize;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .coverage-mini-track{height:4px;border-radius:2px;background:rgba(255,255,255,.08);overflow:hidden;}
+  .coverage-mini-fill{height:100%;border-radius:2px;background:var(--purple);}
+  .coverage-pct{font-size:11px;color:var(--muted);text-align:right;}
+
+  .grid-main{
+    display:grid;
+    grid-template-columns:1.7fr 1fr;
+    gap:16px;
+  }
+  .panel{
+    background:var(--panel);
+    border:1px solid var(--panel-border);
+    border-radius:10px;
+    padding:20px;
+  }
+  .panel h2{font-size:15px;margin:0 0 16px;font-weight:600;}
+  .stat-box{
+    background:rgba(255,255,255,.03);
+    border:1px solid var(--panel-border);
+    border-radius:8px;
+    padding:14px 16px;
+    margin-bottom:12px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .stat-box:last-child{margin-bottom:0;}
+  .stat-label{font-size:12px;color:var(--muted);margin-bottom:6px;}
+  .stat-value{font-size:20px;font-weight:700;}
+  .stat-sub{font-size:11px;color:var(--muted);margin-top:4px;}
+  .stat-icon{font-size:20px;opacity:.85;}
+  .stat-value.green{color:var(--green);}
+  .stat-value.orange{color:var(--orange);}
+  canvas{max-height:280px;}
+  .loading, .error{color:var(--muted);text-align:center;padding:60px 0;}
+  .error{color:var(--red);}
+
+  @media (max-width:900px){
+    .cards{grid-template-columns:repeat(2,1fr);}
+    .grid-main{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div>
+      <div class="eyebrow">Visão Geral do Projeto</div>
+      <h1>Resumo Geral · Métricas Principais</h1>
+      <p class="subtitle" id="subtitle">Análise consolidada da execução de testes automatizados</p>
+    </div>
+    <div>
+      <div class="status-label">Status da Execução</div>
+      <div class="status-pill" id="statusPill"><span class="dot"></span><span id="statusText">—</span></div>
+    </div>
+  </div>
+
+  <div id="content">
+    <div class="loading">Carregando metrics.json…</div>
+  </div>
+</div>
+
+<script>
+const CARD_ACCENTS = ['#22c55e', '#4a7dff', '#f2a93b', '#8b6bf2'];
+const CHART_COLORS = ['#22c55e', '#4a7dff', '#f2a93b', '#ef4d5e', '#8b6bf2', '#4a7dff'];
+
+function fmtTime(totalSeconds) {
+  if (totalSeconds == null) return '—';
+  const m = Math.floor(totalSeconds / 60);
+  const s = Math.round(totalSeconds % 60);
+  return m > 0 ? `${m}m ${s}s` : `${s}s`;
+}
+
+async function loadMetrics() {
+  try {
+    const res = await fetch('metrics.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error('metrics.json não encontrado');
+    const m = await res.json();
+    render(m);
+  } catch (e) {
+    document.getElementById('content').innerHTML =
+      `<div class="error">Não foi possível carregar metrics.json.<br>
+       Gere o arquivo com <code>generate-metrics.js</code> e coloque-o na mesma pasta deste HTML
+       (ou sirva a pasta com <code>npx serve .</code> — fetch não funciona em file:// no Chrome).</div>`;
+    console.error(e);
+  }
+}
+
+function render(m) {
+  const allPassed = m.failed === 0;
+  document.getElementById('statusPill').classList.toggle('warn', !allPassed);
+  document.getElementById('statusText').textContent = allPassed
+    ? `SUCESSO (${m.passedPct}%)`
+    : `${m.failed} FALHA(S) (${m.passedPct}% aprovado)`;
+
+  const html = `
+    <div class="cards">
+      <div class="card" style="--accent:${CARD_ACCENTS[0]}">
+        <div class="card-top"><span class="card-label">Total de Testes</span><span class="card-icon">📝</span></div>
+        <div class="card-value">${m.totalTests}</div>
+        <div class="card-foot">Cenários Executados</div>
+      </div>
+      <div class="card" style="--accent:${CARD_ACCENTS[1]}">
+        <div class="card-top"><span class="card-label">Aprovados</span><span class="card-icon">✅</span></div>
+        <div class="card-value">${m.passedPct}%</div>
+        <div class="card-foot">${m.failed} Falhas · ${m.skipped} Ignorados</div>
+      </div>
+      <div class="card" style="--accent:${CARD_ACCENTS[2]}">
+        <div class="card-top"><span class="card-label">Tempo Total</span><span class="card-icon">⏱️</span></div>
+        <div class="card-value">${fmtTime(m.totalDurationSeconds)}</div>
+        <div class="card-foot">${m.totalDurationSeconds}s <span class="badge stable">Estável</span></div>
+      </div>
+      <div class="card coverage-card" style="--accent:${CARD_ACCENTS[3]}">
+        <div class="card-top"><span class="card-label">Cobertura</span><span class="card-icon">🛡️</span></div>
+        ${m.coveragePct != null ? `
+          <div class="card-value">${m.coveragePct}%</div>
+          <div class="bar-track"><div class="bar-fill" style="width:${m.coveragePct}%"></div></div>
+          ${m.functionalCoverage && m.functionalCoverage.byArea ? `
+            <div class="coverage-breakdown">
+              ${m.functionalCoverage.byArea.map(a => `
+                <div class="coverage-row">
+                  <span class="coverage-area">${a.area}</span>
+                  <div class="coverage-mini-track"><div class="coverage-mini-fill" style="width:${a.pct}%"></div></div>
+                  <span class="coverage-pct">${a.tested}/${a.expected}</span>
+                </div>
+              `).join('')}
+            </div>
+          ` : ''}
+        ` : `
+          <div class="card-value" style="font-size:16px;color:var(--muted);font-weight:600;">Sem dados</div>
+          <div class="card-foot">Configure code coverage no Cypress</div>
+        `}
+      </div>
+    </div>
+
+    <div class="grid-main">
+      <div class="panel">
+        <h2>Performance de Execução (Tempo por Categoria)</h2>
+        <canvas id="catChart"></canvas>
+      </div>
+      <div class="panel">
+        <h2>Estatísticas de Tempo</h2>
+        <div class="stat-box">
+          <div>
+            <div class="stat-label">Tempo Médio</div>
+            <div class="stat-value">${m.avgDurationSeconds}s</div>
+          </div>
+          <div class="stat-icon">⏳</div>
+        </div>
+        <div class="stat-box">
+          <div>
+            <div class="stat-label">Execução Mais Rápida</div>
+            <div class="stat-value green">${m.fastest ? m.fastest.seconds + 's' : '—'}</div>
+            <div class="stat-sub">${m.fastest ? m.fastest.title : ''}</div>
+          </div>
+          <div class="stat-icon">⚡</div>
+        </div>
+        <div class="stat-box">
+          <div>
+            <div class="stat-label">Execução Mais Lenta</div>
+            <div class="stat-value orange">${m.slowest ? m.slowest.seconds + 's' : '—'}</div>
+            <div class="stat-sub">${m.slowest ? m.slowest.title : ''}</div>
+          </div>
+          <div class="stat-icon">⚠️</div>
+        </div>
+      </div>
+    </div>
+  `;
+  document.getElementById('content').innerHTML = html;
+
+  const ctx = document.getElementById('catChart');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: m.categories.map(c => c.name),
+      datasets: [{
+        data: m.categories.map(c => c.seconds),
+        backgroundColor: m.categories.map((_, i) => CHART_COLORS[i % CHART_COLORS.length]),
+        borderRadius: 4,
+        maxBarThickness: 56,
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { display: false }, ticks: { color: '#8891a8', font: { size: 11 } } },
+        y: {
+          grid: { color: '#232a3d' },
+          ticks: { color: '#8891a8', font: { size: 11 } },
+          title: { display: true, text: 'Segundos (s)', color: '#8891a8', font: { size: 11 } }
+        }
+      }
+    }
+  });
+}
+
+loadMetrics();
+</script>
+</body>
+</html>
