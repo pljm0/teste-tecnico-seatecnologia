@@ -19,22 +19,42 @@ O projeto conta com um dashboard próprio, gerado a partir dos relatórios de ex
 
 ```
 teste-tecnico-seatecnologia/
-├── cypress/
-│   ├── e2e/
-│   │   ├── api.cy.js          # Testes de API (CRUD, validações)
-│   │   ├── web.cy.js          # Testes de interface Web
-│   │   └── webxapi.cy.js      # Testes de integração Web x API
-│   ├── fixtures/
-│   ├── reports/                # Relatórios gerados pelo mochawesome
-│   └── screenshots/             # Screenshots de falhas
-├── dashboard/
-│   ├── dashboard.html          # Dashboard de métricas (visual)
-│   ├── chart.umd.min.js        # Chart.js (local, sem dependência de CDN)
-│   ├── generate-metrics.js     # Script que gera o metrics.json
-│   ├── features.json           # Cobertura funcional por área (opcional)
-│   └── metrics.json            # Métricas geradas a cada execução
-├── cypress.config.js
-├── package.json
+│
+├── Documentos/
+│   ├── Evidencias/
+│   ├── Bug-Report.md
+│   ├── Casos-de-Teste-API.md
+│   ├── Casos-de-Teste-WEB.md
+│   ├── Casos-de-Teste-WEBxAPI.md
+│   ├── Testes-Exploratorios-API.md
+│   └── Testes-Exploratorios-WEB.md
+│
+├── Testes-Web-API/
+│   ├── cypress/
+│   │   ├── e2e/
+│   │   │   ├── api.cy.js          # Testes de API
+│   │   │   ├── web.cy.js          # Testes de interface Web
+│   │   │   └── webxapi.cy.js      # Testes de integração Web x API
+│   │   │
+│   │   ├── fixtures/
+│   │   │
+│   │   ├── reports/               # Relatórios gerados pelo Mochawesome
+│   │   │
+│   │   └── screenshots/           # Screenshots de falhas
+│   │
+│   ├── dashboard/
+│   │   ├── dashboard.html         # Dashboard de métricas
+│   │   ├── chart.umd.min.js       # Chart.js local
+│   │   ├── generate-metrics.js    # Script para geração das métricas
+│   │   ├── features.json          # Cobertura funcional por área
+│   │   └── metrics.json           # Métricas geradas a cada execução
+│   │
+│   ├── cypress.config.js
+│   └── package.json
+│
+├── Diario-uso-IA.md
+├── Nota-de-Estrategia.md
+├── Plano-de-Testes.md
 └── README.md
 ```
 
