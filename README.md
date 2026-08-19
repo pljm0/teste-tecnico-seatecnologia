@@ -2,8 +2,8 @@
 
 Suíte de testes automatizados (Web, API e Integração) para o sistema de cadastro de funcionários da SeaTecnologia, desenvolvida com [Cypress](https://www.cypress.io/).
 
-**Aplicação sob teste:** https://analista-teste.seatecnologia.com.br
-**Endpoint da API:** https://analista-teste.seatecnologia.com.br/employees
+**Aplicação sob teste:** https://analista-teste.seatecnologia.com.br  
+**Endpoint da API:** https://analista-teste.seatecnologia.com.br/employees  
 
 ---
 
@@ -11,7 +11,7 @@ Suíte de testes automatizados (Web, API e Integração) para o sistema de cadas
 
 O projeto conta com um dashboard próprio, gerado a partir dos relatórios de execução, com visão geral dos testes, taxa de aprovação, tempo de execução por categoria e estatísticas de performance.
 
-![Dashboard de métricas](assets/dashboard-preview.png)
+![Dashboard de métricas](Testes-Web-API/dashboard-preview.png)
 
 ---
 
