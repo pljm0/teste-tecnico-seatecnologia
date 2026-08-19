@@ -1,4 +1,4 @@
-# Relatório de Defeitos — SeaTecnologia  
+# Relatório de Defeitos - SeaTecnologia  
 
 **Sistema:** Cadastro e listagem de Funcionários (Web)  
 **Ambiente:** Navegador Chrome / Windows 11  
