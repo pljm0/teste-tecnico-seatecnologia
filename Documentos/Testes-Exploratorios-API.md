@@ -1,4 +1,4 @@
-## Sessão Exploratória — SeaTecnologia API
+## Sessão Exploratória - SeaTecnologia API
 
 ### O que foi testado
 
