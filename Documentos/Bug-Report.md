@@ -329,23 +329,23 @@
 
 **Passos:**
 1. Realizar requisição POST para o endpoint /employees com o seguinte payload:
-
-    {
-        "state": {
-            "employee": {
-                "isActive": false,
-                "name": "Teste2",
-                "gender": "masculino",
-                "cpf": "123.4567890",
-                "birthDay": "2000-08-12",
-                "rg": "1234567",
-                "role": "",
-                "usesEpi": true,
-                "caNumber": ""
-            }
-        }
-    }
-
+  
+    {  
+        "state": {  
+            "employee": {  
+                "isActive": false,  
+                "name": "Teste2",  
+                "gender": "masculino",  
+                "cpf": "123.4567890",  
+                "birthDay": "2000-08-12",  
+                "rg": "1234567",  
+                "role": "",  
+                "usesEpi": true,  
+                "caNumber": "12345"  
+            }  
+        }  
+    }  
+  
 2. Realizar requisição GET para o endpoint /employees para visualizar os funcionários cadastrados.
 
 **Esperado:** A API não deve permitir o cadastro de funcionários com CPF em formato inválido.
@@ -364,41 +364,42 @@
 
 **Passos:**
 1. Realizar requisição POST para o endpoint /employees com o seguinte payload:
-
-    {
-        "state": {
-            "employee": {
-                "isActive": false,
-                "name": "Teste2",
-                "gender": "masculino",
-                "cpf": "12324567890",
-                "birthDay": "2000-08-12",
-                "rg": "1234567",
-                "role": "",
-                "usesEpi": true,
-                "caNumber": ""
-            }
-        }
+  
+    {  
+        "state": {  
+            "employee": {  
+                "isActive": false,  
+                "name": "Teste2",  
+                "gender": "masculino",  
+                "cpf": "12324567890",  
+                "birthDay": "2000-08-12",  
+                "rg": "1234567",  
+                "role": "",  
+                "usesEpi": true,  
+                "caNumber": "12345"  
+            }  
+        }  
     }
-2. Realizar requisição POST para o endpoint /employees com o seguinte payload:
-
-    {
-        "state": {
-            "employee": {
-                "isActive": false,
-                "name": "Teste3",
-                "gender": "masculino",
-                "cpf": "12324567890",
-                "birthDay": "2000-08-12",
-                "rg": "1234567",
-                "role": "",
-                "usesEpi": true,
-                "caNumber": ""
-            }
-        }
-    }
-
-3. Realizar requisição GET para o endpoint /employees para visualizar os funcionários cadastrados.
+     
+3. Realizar requisição POST para o endpoint /employees com o seguinte payload:
+  
+    {  
+        "state": {  
+            "employee": {  
+                "isActive": false,  
+                "name": "Teste3",  
+                "gender": "masculino",  
+                "cpf": "12324567890",  
+                "birthDay": "2000-08-12",  
+                "rg": "1234567",  
+                "role": "",  
+                "usesEpi": true,  
+                "caNumber": "12345"  
+            }  
+        }  
+    }  
+  
+4. Realizar requisição GET para o endpoint /employees para visualizar os funcionários cadastrados.
 
 **Esperado:** A API não deve permitir o cadastro de funcionários com CPF já cadastrado no sistema.
 
@@ -416,23 +417,23 @@
 
 **Passos:**
 1. Realizar requisição POST para o endpoint /employees com o seguinte payload:
-
-    {
-        "state": {
-            "employee": {
-                "isActive": false,
-                "name": "",
-                "gender": "masculino",
-                "cpf": "",
-                "birthDay": "2000-08-12",
-                "rg": "",
-                "role": "",
-                "usesEpi": true,
-                "caNumber": ""
-            }
-        }
-    }
-
+  
+    {  
+        "state": {  
+            "employee": {   
+                "isActive": false,  
+                "name": "",  
+                "gender": "masculino",  
+                "cpf": "",  
+                "birthDay": "2000-08-12",  
+                "rg": "",  
+                "role": "",  
+                "usesEpi": true,  
+                "caNumber": "12345"  
+            }  
+        }  
+    }  
+  
 2. Realizar requisição GET para o endpoint /employees para visualizar o funcionário cadastrado.
 
 **Esperado:** A API não deve permitir o cadastro de funcionários com campos obrigatórios vazios.
@@ -451,23 +452,23 @@
 
 **Passos:**
 1. Realizar requisição POST para o endpoint /employees com o seguinte payload:
-
-    {
-        "state": {
-            "employee": {
-                "isActive": false,
-                "name": "Teste2",
-                "gender": "masculino",
-                "cpf": "12345678912",
-                "birthDay": "2000.08/12",
-                "rg": "213456",
-                "role": "",
-                "usesEpi": true,
-                "caNumber": ""
-            }
-        }
-    }
-
+  
+    {  
+        "state": {  
+            "employee": {  
+                "isActive": false,  
+                "name": "Teste2",  
+                "gender": "masculino",  
+                "cpf": "12345678912",  
+                "birthDay": "2000.08/12",  
+                "rg": "213456",  
+                "role": "",  
+                "usesEpi": true,  
+                "caNumber": "12345"  
+            }  
+        }  
+    }  
+  
 2. Realizar requisição GET para o endpoint /employees para visualizar o funcionário cadastrado.
 
 **Esperado:** A API não deve permitir o cadastro de funcionários com data de nascimento em formato inválido.
@@ -505,21 +506,21 @@
 
 **Passos:**
 1. Realizar requisição POST para o endpoint /employees com o seguinte payload:
-
-    {
-            "employee": {
-                "isActive": false,
-                "name": "Teste2",
-                "gender": "masculino",
-                "cpf": "12345678912",
-                "birthDay": "2000.08/12",
-                "rg": "213456",
-                "role": "",
-                "usesEpi": true,
-                "caNumber": ""
-            }
-        }
-
+  
+    {  
+            "employee": {  
+                "isActive": false,  
+                "name": "Teste2",  
+                "gender": "masculino",  
+                "cpf": "12345678912",  
+                "birthDay": "2000.08/12",  
+                "rg": "213456",  
+                "role": "",  
+                "usesEpi": true,  
+                "caNumber": "12345"  
+            }  
+        }  
+  
 2. Acessar https://analista-teste.seatecnologia.com.br
 
 **Esperado:** A API deve retornar erro 400 (Bad Request), rejeitando a criação do funcionário com payload incorreto.
