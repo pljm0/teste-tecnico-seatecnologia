@@ -60,11 +60,11 @@ teste-tecnico-seatecnologia/
 
 ## 📄 Documentação do projeto
 
-- **Plano de Testes** — estratégia, escopo, riscos e critérios de entrada/saída
-- **Cenários de Teste** — Web, API e Integração, com passos e resultados esperados
-- **Relatório de Defeitos** — bugs encontrados nas sessões exploratórias, com evidências
-- **Nota de Estratégia** — critérios de priorização e o que ficou fora do escopo
-- **Diário de Uso de IA** — registro de uso de IA generativa durante o desenvolvimento
+- **Plano de Testes** - estratégia, escopo, riscos e critérios de entrada/saída
+- **Cenários de Teste** - Web, API e Integração, com passos e resultados esperados
+- **Relatório de Defeitos** - bugs encontrados nas sessões exploratórias, com evidências
+- **Nota de Estratégia** - critérios de priorização e o que ficou fora do escopo
+- **Diário de Uso de IA** - registro de uso de IA generativa durante o desenvolvimento
 
 ---
 
