@@ -1,4 +1,4 @@
-# Casos de Teste — SeaTecnologia
+# Casos de Teste - SeaTecnologia
 
 **Sistema:** Cadastro de Funcionários (Web)  
 **Ambiente:** Navegador Chrome / Windows 11  
