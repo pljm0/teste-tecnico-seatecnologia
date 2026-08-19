@@ -1,4 +1,4 @@
-# Nota de Estratégia — SeaTecnologia
+# Nota de Estratégia - SeaTecnologia
 
 ## Priorização
 
