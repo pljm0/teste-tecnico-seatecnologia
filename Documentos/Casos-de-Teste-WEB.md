@@ -1,7 +1,7 @@
 # Casos de Teste — SeaTecnologia
 
-**Sistema:** Cadastro de Funcionários (Web)
-**Ambiente:** Navegador Chrome / Windows 11
+**Sistema:** Cadastro de Funcionários (Web)  
+**Ambiente:** Navegador Chrome / Windows 11  
 **Aplicação:** https://analista-teste.seatecnologia.com.br
 
 ---
@@ -10,22 +10,22 @@
 
 | ID | Título | Observação |
 |---|---|---|
-| [CT-001](#ct-001) | Efetuar cadastro de funcionário com dados válidos | @Smoke / @Regression |
-| [CT-002](#ct-002) | Efetuar cadastro de funcionário ativo com dados válidos | @Regression |
-| [CT-003](#ct-003) | Efetuar cadastro de funcionário com idade menor de 18 anos | @Known-issue |
-| [CT-004](#ct-004) | Efetuar cadastro de funcionário com data de nascimento futura | @Known-issue |
-| [CT-005](#ct-005) | Não permitir cadastro de funcionário com CPF duplicado | @Known-issue |
-| [CT-006](#ct-006) | Validar preenchimento obrigatório do campo Nome | @Regression |
-| [CT-007](#ct-007) | Validar preenchimento obrigatório do campo CPF | @Regression |
-| [CT-008](#ct-008) | Validar preenchimento obrigatório do campo RG | @Regression |
-| [CT-009](#ct-009) | Validar preenchimento obrigatório do campo Data de nascimento | @Regression |
-| [CT-010](#ct-010) | Validar preenchimento obrigatório do campo Número do CA | @Regression |
-| [CT-011](#ct-011) | Validar quantidade mínima de caracteres no campo CPF | @Regression |
-| [CT-012](#ct-012) | Validar inserção de emojis nos campos de cadastro | @Know-issue |
+| [WEB-CT-001](#web-ct-001) | Efetuar cadastro de funcionário com dados válidos | @Smoke / @Regression |
+| [WEB-CT-002](#web-ct-002) | Efetuar cadastro de funcionário ativo com dados válidos | @Regression |
+| [WEB-CT-003](#web-ct-003) | Efetuar cadastro de funcionário com idade menor de 18 anos | @Known-issue |
+| [WEB-CT-004](#web-ct-004) | Efetuar cadastro de funcionário com data de nascimento futura | @Known-issue |
+| [WEB-CT-005](#web-ct-005) | Não permitir cadastro de funcionário com CPF duplicado | @Known-issue |
+| [WEB-CT-006](#web-ct-006) | Validar preenchimento obrigatório do campo Nome | @Regression |
+| [WEB-CT-007](#web-ct-007) | Validar preenchimento obrigatório do campo CPF | @Regression |
+| [WEB-CT-008](#web-ct-008) | Validar preenchimento obrigatório do campo RG | @Regression |
+| [WEB-CT-009](#web-ct-009) | Validar preenchimento obrigatório do campo Data de nascimento | @Regression |
+| [WEB-CT-010](#web-ct-010) | Validar preenchimento obrigatório do campo Número do CA | @Regression |
+| [WEB-CT-011](#web-ct-011) | Validar quantidade mínima de caracteres no campo CPF | @Regression |
+| [WEB-CT-012](#web-ct-012) | Validar inserção de emojis nos campos de cadastro | @Know-issue |
 
 ---
 
-## CT-001
+## WEB-CT-001
 
 **Título:** Efetuar cadastro de funcionário com dados válidos
 
@@ -50,7 +50,7 @@
 
 ---
 
-## CT-002
+## WEB-CT-002
 
 **Título:** Efetuar cadastro de funcionário ativo com dados válidos
 
@@ -74,7 +74,7 @@
 
 ---
 
-## CT-003
+## WEB-CT-003
 
 **Título:** Efetuar cadastro de funcionário com idade menor de 18 anos
 
@@ -98,7 +98,7 @@
 
 ---
 
-## CT-004
+## WEB-CT-004
 
 **Título:** Efetuar cadastro de funcionário com data de nascimento futura
 
@@ -122,7 +122,7 @@
 
 ---
 
-## CT-005
+## WEB-CT-005
 
 **Título:** Não permitir cadastro de funcionário com CPF duplicado
 
@@ -161,7 +161,7 @@
 
 ---
 
-## CT-006
+## WEB-CT-006
 
 **Título:** Validar preenchimento obrigatório do campo Nome
 
@@ -185,7 +185,7 @@
 
 ---
 
-## CT-007
+## WEB-CT-007
 
 **Título:** Validar preenchimento obrigatório do campo CPF
 
@@ -209,7 +209,7 @@
 
 ---
 
-## CT-008
+## WEB-CT-008
 
 **Título:** Validar preenchimento obrigatório do campo RG
 
@@ -233,7 +233,7 @@
 
 ---
 
-## CT-009
+## WEB-CT-009
 
 **Título:** Validar preenchimento obrigatório do campo Data de nascimento
 
@@ -257,7 +257,7 @@
 
 ---
 
-## CT-010
+## WEB-CT-010
 
 **Título:** Validar preenchimento obrigatório do campo Número do CA
 
@@ -281,7 +281,7 @@
 
 ---
 
-## CT-011
+## WEB-CT-011
 
 **Título:** Validar quantidade mínima de caracteres no campo CPF
 
@@ -299,7 +299,7 @@
 
 ---
 
-## CT-012
+## WEB-CT-012
 
 **Título:** Validar inserção de emojis nos campos de cadastro
 
