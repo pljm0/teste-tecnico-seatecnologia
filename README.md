@@ -1,4 +1,4 @@
-# 🦈 Teste Técnico — SeaTecnologia (Analista de Teste QA)
+# 🦈 Teste Técnico - SeaTecnologia (Analista de Teste QA)
 
 Suíte de testes automatizados (Web, API e Integração) para o sistema de cadastro de funcionários da SeaTecnologia, desenvolvida com [Cypress](https://www.cypress.io/).
 
@@ -27,7 +27,7 @@ teste-tecnico-seatecnologia/
 │   ├── fixtures/
 │   ├── reports/                # Relatórios gerados pelo mochawesome
 │   └── screenshots/             # Screenshots de falhas
-├── qa-metrics/
+├── dashboard/
 │   ├── dashboard.html          # Dashboard de métricas (visual)
 │   ├── chart.umd.min.js        # Chart.js (local, sem dependência de CDN)
 │   ├── generate-metrics.js     # Script que gera o metrics.json
