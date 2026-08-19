@@ -1,4 +1,4 @@
-# Plano de Testes — SeaTecnologia
+# Plano de Testes - SeaTecnologia
 
 ## 1. Identificação
 
