@@ -1,4 +1,4 @@
-# Casos de Teste — API — SeaTecnologia
+# Casos de Teste - API - SeaTecnologia
 
 **Sistema:** Cadastro de Funcionários (API)    
 **Endpoint base:** https://analista-teste.seatecnologia.com.br/employees  
