@@ -1,4 +1,4 @@
-## Sessão Exploratória — SeaTecnologia
+## Sessão Exploratória - SeaTecnologia
 
 ### O que foi testado
 
